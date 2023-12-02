@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  Deploy:
 
     runs-on: self-hosted
 
@@ -23,6 +23,4 @@ jobs:
     - name: Pull latest code
       run: git pull origin main
 
-    - name: Update composer
-      run: composer install
 
