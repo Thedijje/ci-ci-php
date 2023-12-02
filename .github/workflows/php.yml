@@ -23,6 +23,7 @@ jobs:
   Deploy:
 
     runs-on: self-hosted
+    needs: Cleanup
 
     steps:
     - uses: actions/checkout@v3
