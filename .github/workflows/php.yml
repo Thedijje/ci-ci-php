@@ -1,0 +1,28 @@
+name: PHP Composer
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Clean filesystem
+      run: git reset --hard
+
+    - name: Pull latest code
+      run: git pull origin main
+
+    - name: Update composer
+      run: composer install
+
